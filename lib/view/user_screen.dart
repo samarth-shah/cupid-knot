@@ -10,7 +10,6 @@ import 'package:stacked/stacked.dart';
 
 class UserScreen extends StatelessWidget {
   const UserScreen({super.key});
-  // int length = 0;
 
   Widget bottomModal(BuildContext context, UserViewModel model) {
     var size = MediaQuery.of(context).size.height;
@@ -192,11 +191,14 @@ class UserScreen extends StatelessWidget {
                 padding: const EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
                 child: ElevatedButton(
                   onPressed: () async => await model.createContactUser(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.yellow.shade600,
+                  ),
                   child: const Text(
                     'Create User',
                     style: TextStyle(
                       fontFamily: 'Poppins',
-                      color: Colors.white,
+                      color: Colors.blue,
                     ),
                   ),
                 ),
@@ -211,16 +213,17 @@ class UserScreen extends StatelessWidget {
   Widget buildUser(ContactList user) {
     final curUser = FirebaseAuth.instance.currentUser!;
     if (curUser.email == user.owner) {
-      // length++;
       return Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListTile(
           leading: CircleAvatar(
-            backgroundColor: const Color.fromARGB(255, 236, 241, 243),
+            backgroundColor: Colors.yellow.shade600,
             child: Text(
               user.fullName.substring(0, 1).toUpperCase(),
               style: const TextStyle(
-                  color: Colors.blue, fontWeight: FontWeight.bold),
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           title: Text(user.fullName),

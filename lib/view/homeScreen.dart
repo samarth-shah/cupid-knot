@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         type: BottomNavigationBarType.shifting,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.yellow.shade600,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
         elevation: 5,

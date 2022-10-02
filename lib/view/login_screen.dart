@@ -226,11 +226,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                   onPressed: () {
                                     model.signIn(context);
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.yellow.shade600,
+                                  ),
                                   child: const Text(
                                     'Login',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      color: Colors.white,
+                                      color: Colors.blue,
                                     ),
                                   ),
                                 ),
@@ -240,10 +243,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: ((context) =>
-                                        const SignUpScreen())));
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((context) => const SignUpScreen())));
                           },
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(

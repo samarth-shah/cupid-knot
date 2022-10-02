@@ -20,10 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Cupid Knot',
+      debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: Utils.messengerKey,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: const SplashScreenPage(),
     );
   }

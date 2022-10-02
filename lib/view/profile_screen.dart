@@ -23,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
   final curUser = FirebaseAuth.instance.currentUser!;
 
   Widget buildUserTile(UserData user) {
-    const url = 'https://picsum.photos/250?image=9';
+    const url = 'https://static.thenounproject.com/png/638636-200.png';
     if (user.email == curUser.email) {
       return ViewModelBuilder<ProfileViewModel>.reactive(
         viewModelBuilder: () => ProfileViewModel(users: user),
@@ -37,14 +37,14 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 60,
-                    backgroundColor: Color.fromARGB(255, 236, 241, 243),
-                    foregroundImage: NetworkImage(url),
+                    backgroundColor: Color.fromARGB(255, 253, 216, 53),
+                    backgroundImage: NetworkImage(url),
                   ),
                   const SizedBox(
                     height: 40,
                   ),
                   Text(
-                    user.fullName,
+                    user.fullName.toUpperCase(),
                     style: const TextStyle(
                       color: Colors.blue,
                       fontSize: 26,
@@ -159,6 +159,7 @@ class ProfileScreen extends StatelessWidget {
                         icon: const Icon(
                           Icons.edit,
                           size: 18,
+                          color: Color.fromARGB(255, 253, 216, 53),
                         ),
                       )
                     ],
@@ -188,6 +189,7 @@ class ProfileScreen extends StatelessWidget {
                         icon: const Icon(
                           Icons.logout,
                           size: 18,
+                          color: Colors.red,
                         ),
                       )
                     ],
@@ -385,11 +387,14 @@ class ProfileScreen extends StatelessWidget {
                 padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                 child: ElevatedButton(
                   onPressed: () async => model.editUser(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.yellow.shade600,
+                  ),
                   child: const Text(
                     'Edit User',
                     style: TextStyle(
                       fontFamily: 'Poppins',
-                      color: Colors.white,
+                      color: Colors.blue,
                     ),
                   ),
                 ),

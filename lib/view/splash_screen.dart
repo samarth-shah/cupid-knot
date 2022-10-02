@@ -16,7 +16,7 @@ class SplashScreenPage extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.yellow.shade600,
-            automaticallyImplyLeading: false,
+            // automaticallyImplyLeading: false,
             title: const Text(
               'Cupid Knot',
               style: TextStyle(
@@ -27,6 +27,7 @@ class SplashScreenPage extends StatelessWidget {
             ),
             elevation: 2,
           ),
+          //
           backgroundColor: const Color(0xFFFFCB12),
           body: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),

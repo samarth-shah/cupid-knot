@@ -524,11 +524,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     model.name!.clear();
                                     model.phoneNumber!.clear();
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.yellow.shade600,
+                                  ),
                                   child: const Text(
                                     'Sign Up',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      color: Colors.white,
+                                      color: Colors.blue,
                                     ),
                                   ),
                                 ),
@@ -539,6 +542,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       GestureDetector(
                         onTap: () {
+                          // Navigator.pop(context);
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                               builder: ((context) => const LoginScreen()),
